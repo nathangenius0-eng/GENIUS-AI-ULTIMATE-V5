@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07101f">
+<title>GENIUS AI ULTIMATE — V5 Connected Intelligence</title>
+<style>
+:root{--bg:#050b16;--panel:#0b1628;--panel2:#101f36;--line:#1d3555;--cyan:#31d9ff;--blue:#477dff;--violet:#9a70ff;--text:#eef6ff;--muted:#91a7c2;--green:#43e0ae}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#17345b 0,#07101f 48%,#040914 100%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
+.app{display:grid;grid-template-columns:270px 1fr;min-height:100vh}.side{background:#071222ef;border-right:1px solid var(--line);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{display:flex;gap:12px;align-items:center;margin:0 4px 22px}.brandmark{width:45px;height:45px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#153c69,#1c9dc3);box-shadow:0 0 28px #26cfff55;font-size:23px}.brand b{display:block;letter-spacing:1.4px}.brand small{color:var(--cyan);font-size:10px;letter-spacing:2px}
+.section{font-size:10px;color:#6685a9;letter-spacing:1.8px;margin:19px 10px 7px}.nav{display:flex;align-items:center;gap:10px;width:100%;border:1px solid transparent;background:transparent;color:#b9cbe0;padding:9px 11px;border-radius:11px;text-align:left;margin:2px 0}.nav:hover,.nav.active{background:#122945;border-color:#24527c;color:white}.nav .ico{width:22px;text-align:center;font-size:16px}.sidefoot{margin-top:20px;padding:12px;border:1px solid var(--line);border-radius:14px;color:var(--muted);font-size:11px}
+.main{padding:24px clamp(16px,3vw,42px) 50px;max-width:1500px;width:100%;margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:22px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:2px}.top h1{font-size:clamp(22px,3vw,32px);margin:3px 0}.status{border:1px solid #275b58;background:#0c282b;color:#83f4d2;border-radius:30px;padding:7px 12px;font-size:12px;white-space:nowrap}
+.hero{border:1px solid #214b70;border-radius:24px;background:linear-gradient(115deg,#102744dd,#10152ddd 65%,#24184b99);padding:25px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:18px;box-shadow:0 18px 55px #0005;overflow:hidden;position:relative}.hero h2{font-size:clamp(24px,3vw,36px);line-height:1.15;margin:7px 0 10px}.hero p{color:#b2c7df;max-width:620px;margin:0 0 18px}.actions{display:flex;gap:10px;flex-wrap:wrap}.primary,.secondary{border:0;border-radius:12px;padding:11px 16px;font-weight:650}.primary{background:linear-gradient(100deg,#1bbfe7,#477dff);color:#03111d}.secondary{background:#142945;border:1px solid #2b527a;color:#e5f4ff}.brain{width:170px;height:170px;margin:auto;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,#254b79 0,#122b4a 48%,#071321 70%);border:1px solid #3bbfff88;box-shadow:0 0 35px #29c9ff55,inset 0 0 30px #25bfff33;font-size:78px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-top:20px}.card{background:linear-gradient(145deg,#0e1c31,#091525);border:1px solid var(--line);border-radius:17px;padding:16px;min-height:125px;transition:.2s}.card:hover{transform:translateY(-3px);border-color:#3183b8}.card .symbol{font-size:23px}.card h3{margin:8px 0 4px;font-size:14px}.card p{color:var(--muted);font-size:12px;margin:0}.card button{background:none;border:0;color:inherit;text-align:left;padding:0;width:100%}
+.content{margin-top:20px;background:#091525;border:1px solid var(--line);border-radius:20px;padding:20px}.contenthead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}.content h2{font-size:19px;margin:0}.muted{color:var(--muted)}.chatbox{height:300px;overflow:auto;padding:10px;background:#06101e;border:1px solid #1b3554;border-radius:14px}.msg{max-width:85%;padding:11px 13px;border-radius:14px;margin:8px 0;white-space:pre-wrap}.bot{background:#122a45;border:1px solid #245178}.user{background:#174b70;margin-left:auto}.composer{display:flex;gap:9px;margin-top:12px}.composer textarea{resize:vertical;min-height:48px;max-height:130px;flex:1;background:#071321;color:white;border:1px solid #254363;border-radius:12px;padding:12px}.tag{display:inline-block;padding:4px 8px;border-radius:20px;background:#102b3b;color:#7ce5ff;font-size:11px;margin:2px}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.field{background:#071321;color:white;border:1px solid #294766;border-radius:10px;padding:10px;max-width:100%}.field::placeholder,textarea::placeholder{color:#7890ac}.list{display:grid;gap:9px}.item{padding:12px;border:1px solid var(--line);border-radius:12px;background:#0c1b2e;display:flex;justify-content:space-between;gap:12px;align-items:center}.hidden{display:none!important}.note{font-size:12px;color:#9fb3ca;margin-top:12px}.foot{margin-top:25px;text-align:center;color:#66809f;font-size:11px}.result{padding:13px;border:1px solid #244666;border-radius:12px;background:#0c1c30;margin-top:9px}.result b{display:block}.pill{display:inline-block;border:1px solid #2b527a;padding:5px 9px;border-radius:20px;color:#b8d7f5;font-size:11px}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.app{display:block}.side{position:relative;height:auto;padding:12px;border-right:0;border-bottom:1px solid var(--line)}.brand{margin:0 5px 10px}.side nav{display:flex;overflow-x:auto;gap:5px}.section,.sidefoot{display:none}.nav{width:auto;white-space:nowrap;padding:8px 10px;font-size:12px}.nav .ico{width:auto}.main{padding:17px 13px 35px}.hero{grid-template-columns:1fr;padding:20px}.brain{display:none}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.card{padding:12px;min-height:115px}.top{align-items:flex-start}.status{font-size:10px}.content{padding:14px}.chatbox{height:340px}.composer{flex-wrap:wrap}.composer button{flex:1}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="side">
+ <div class="brand"><div class="brandmark">🧠</div><div><b>GENIUS AI</b><small>ULTIMATE • PLATEFORME</small></div></div>
+ <nav id="nav">
+  <div class="section">ESPACE CENTRAL</div>
+  <button class="nav active" data-page="home"><span class="ico">⌂</span>Accueil</button>
+  <button class="nav" data-page="brain"><span class="ico">🧠</span>GENIUS BRAIN</button>
+  <button class="nav" data-page="chat"><span class="ico">✦</span>GENIUS CHAT</button>
+  <button class="nav" data-page="memory"><span class="ico">◉</span>GENIUS MEMORY</button>
+  <button class="nav" data-page="voice"><span class="ico">🎙</span>GENIUS VOICE</button>
+  <button class="nav" data-page="avatar"><span class="ico">🤖</span>GENIUS AVATAR 3D</button>
+  <button class="nav" data-page="micro"><span class="ico">🎧</span>GENIUS MICRO</button>
+  <div class="section">APPRENTISSAGE & SCIENCES</div>
+  <button class="nav" data-page="medical"><span class="ico">✚</span>GENIUS MEDICAL</button>
+  <button class="nav" data-page="consult"><span class="ico">⚕</span>GENIUS CONSULTATION</button>
+  <button class="nav" data-page="school"><span class="ico">🎓</span>GENIUS SCHOOL</button>
+  <button class="nav" data-page="research"><span class="ico">⌕</span>GENIUS RESEARCH</button>
+  <button class="nav" data-page="translator"><span class="ico">文</span>GENIUS TRANSLATOR</button>
+  <button class="nav" data-page="document"><span class="ico">📄</span>GENIUS DOCUMENT</button>
+  <div class="section">CRÉATION & DIVERTISSEMENT</div>
+  <button class="nav" data-page="music"><span class="ico">♫</span>GENIUS MUSIC</button>
+  <button class="nav" data-page="studio"><span class="ico">🎚</span>GENIUS STUDIO</button>
+  <button class="nav" data-page="entertainment"><span class="ico">🎬</span>GENIUS ENTERTAINMENT</button>
+  <button class="nav" data-page="download"><span class="ico">⬇</span>GENIUS DOWNLOAD</button>
+  <div class="section">PROTECTION & APPLICATION</div>
+  <button class="nav" data-page="cyber"><span class="ico">⬡</span>GENIUS CYBER DEFENSE</button>
+  <button class="nav" data-page="advanced"><span class="ico">🚀</span>GENIUS ADVANCED</button>
+  <button class="nav" data-page="settings"><span class="ico">⚙</span>GENIUS SETTINGS</button>
+  <button class="nav" data-page="history"><span class="ico">◷</span>Historique</button>
+ </nav>
+ <div class="sidefoot">● Interface locale prête<br><span class="muted">Les services IA, catalogue et cloud nécessitent encore leurs connexions serveur.</span></div>
+</aside>
+<main class="main">
+<header class="top"><div><div class="eyebrow">UN CERVEAU CENTRAL • 18 ESPACES SPÉCIALISÉS</div><h1 id="pageTitle">Bienvenue dans GENIUS AI</h1></div><div class="status" id="connectionStatus">● Vérification du serveur…</div></header>
+<section id="homePage">
+ <div class="hero"><div><div class="eyebrow">GENIUS BRAIN • CENTRE DE COMMANDE</div><h2>L'intelligence sans frontières.</h2><p>Une plateforme unique pour apprendre, créer, rechercher, organiser, protéger et découvrir des contenus.</p><div class="actions"><button class="primary" onclick="showPage('chat')">✦ Démarrer une discussion</button><button class="secondary" onclick="showPage('entertainment')">🎬 Explorer les divertissements</button></div></div><div class="brain">🧠</div></div>
+ <div class="grid" id="homeCards"></div>
+ <div class="content"><h2>État de la plateforme</h2><p class="muted">L'interface et plusieurs outils locaux sont testables. Les fonctions nécessitant une IA distante, un catalogue de médias ou un stockage cloud attendent leur backend sécurisé.</p><div class="row"><span class="tag">Interface active</span><span class="tag">Navigation fonctionnelle</span><span class="tag">Historique local</span><span class="tag">Téléversement local</span><span class="tag">Backend sécurisé à configurer</span></div></div>
+</section>
+<section id="otherPage" class="hidden"><div class="content"><div class="contenthead"><h2 id="sectionTitle">GENIUS CHAT</h2><span class="tag" id="sectionTag">Espace de travail</span></div><div id="pageBody"></div></div></section>
+<div class="foot">GENIUS AI ULTIMATE • V5 • Gemini côté serveur • Les capacités non intégrées restent signalées comme telles.</div>
+</main></div>
+<script>
+const modules=[
+["brain","🧠","GENIUS BRAIN","Centre de commande et coordination des modules."],
+["chat","✦","GENIUS CHAT","Assistant conversationnel central."],
+["voice","🎙","GENIUS VOICE","Voix et lecture vocale."],
+["avatar","🤖","GENIUS AVATAR 3D","Espace prévu pour un avatar interactif."],
+["memory","◉","GENIUS MEMORY","Préférences et mémoire locale de démonstration."],
+["research","⌕","GENIUS RESEARCH","Recherche et organisation des sources."],
+["medical","✚","GENIUS MEDICAL","Apprentissage médical et infirmier."],
+["consult","⚕","GENIUS CONSULTATION","Trame pédagogique d'entretien clinique."],
+["school","🎓","GENIUS SCHOOL","Cours, révisions et exercices."],
+["music","♫","GENIUS MUSIC","Idées, paroles et projets musicaux."],
+["studio","🎚","GENIUS STUDIO","Atelier de production audio."],
+["cyber","⬡","GENIUS CYBER DEFENSE","Sensibilisation et défense numérique."],
+["translator","文","GENIUS TRANSLATOR","Traduction multilingue."],
+["document","📄","GENIUS DOCUMENT","Importation et organisation de documents."],
+["settings","⚙","GENIUS SETTINGS","Préférences et état des connexions."],
+["micro","🎧","GENIUS MICRO","Espace de dictée vocale."],
+["entertainment","🎬","GENIUS ENTERTAINMENT","Découverte de films, séries et musique."],
+["download","⬇","GENIUS DOWNLOAD","Gestionnaire de téléchargements autorisés."]
+];
+const titles={home:"Bienvenue dans GENIUS AI"};modules.forEach(m=>titles[m[0]]=m[2]);
+let current="home", conversations=JSON.parse(localStorage.getItem("genius_history")||"[]"), localFiles=[];
+const $=id=>document.getElementById(id);
+$("homeCards").innerHTML=modules.filter(m=>m[0]!=="brain").map(m=>`<div class="card"><button onclick="showPage('${m[0]}')"><span class="symbol">${m[1]}</span><h3>${m[2]}</h3><p>${m[3]}</p></button></div>`).join("") + `<div class="card"><button onclick="showPage('advanced')"><span class="symbol">🚀</span><h3>GENIUS ADVANCED</h3><p>Architecture étendue : 18 modules originaux et capacités spécialisées.</p></button></div>`;
+function save(){localStorage.setItem("genius_history",JSON.stringify(conversations))}
+function showPage(p){current=p;$("pageTitle").textContent=titles[p]||p;$("homePage").classList.toggle("hidden",p!=="home");$("otherPage").classList.toggle("hidden",p==="home");document.querySelectorAll(".nav").forEach(b=>b.classList.toggle("active",b.dataset.page===p));if(p!=="home")renderPage(p);window.scrollTo(0,0)}
+$("nav").addEventListener("click",e=>{let b=e.target.closest("[data-page]");if(b)showPage(b.dataset.page)});
+function renderPage(p){
+ $("sectionTitle").textContent=titles[p]||p;let body=$("pageBody"),html="";
+ if(p==="brain")html=`<h3>Le centre de coordination</h3><p>GENIUS BRAIN coordonne les 18 modules originaux et toutes les capacités spécialisées : raisonnement, agents, programmation, vision, documents, mémoire, fiabilité et sécurité. Le routage intelligent réel sera activé avec le backend.</p><div class="row">${modules.filter(x=>x[0]!=="brain").map(x=>`<button class="secondary" onclick="showPage('${x[0]}')">${x[1]} ${x[2]}</button>`).join("")}</div><p class="note">Le routage intelligent automatique nécessite encore la connexion du moteur IA.</p>`;
+ else if(p==="chat")html=`<div class="row"><span class="tag">Mode prototype</span><span class="tag">IA serveur non connectée</span></div><div class="chatbox" id="chatbox"><div class="msg bot">Bienvenue dans GENIUS AI. L'interface reçoit les messages, mais le moteur IA n'est pas encore connecté.</div></div><div class="composer"><textarea id="prompt" placeholder="Écris ton message ici…"></textarea><button class="primary" onclick="sendMessage()">Envoyer ➤</button></div><p class="note">N'entre aucune information personnelle ou confidentielle dans cette démonstration.</p>`;
+ else if(p==="history")html=`<button class="secondary" onclick="clearHistory()">Effacer l'historique</button><div class="list" style="margin-top:14px">${conversations.length?conversations.slice().reverse().map(x=>`<div class="item"><div><b>${escapeHtml(x.text.slice(0,90))}</b><div class="muted">${new Date(x.date).toLocaleString()}</div></div><span class="tag">Local</span></div>`).join(""):`<p class="muted">Aucune conversation enregistrée.</p>`}</div>`;
+ else if(p==="memory")html=`<p>La mémoire actuelle conserve l'historique sur ce navigateur uniquement.</p><div class="row"><span class="tag">Stockage local</span><span class="tag">Pas de synchronisation cloud</span></div><button class="secondary" onclick="localStorage.removeItem('genius_history');conversations=[];renderPage('memory');alert('Historique local effacé.')">Effacer les données de démonstration</button>`;
+ else if(p==="medical")html=`<p>Zone pédagogique pour apprendre les notions médicales et infirmières.</p><div class="row"><span class="tag">Anatomie</span><span class="tag">Physiologie</span><span class="tag">Pharmacologie</span><span class="tag">Soins infirmiers</span></div><textarea class="field" style="width:100%;min-height:100px" placeholder="Sujet médical à étudier…"></textarea><p class="note">Outil éducatif uniquement : ne remplace pas un professionnel de santé. L'assistant IA médical reste à connecter.</p>`;
+ else if(p==="consult")html=`<p><b>Trame pédagogique d'entretien clinique</b></p><p class="muted">N'inscris pas de données permettant d'identifier un vrai patient.</p><div class="list"><label>Motif de consultation<input class="field" style="width:100%" placeholder="Ex. : douleur, fièvre…"></label><label>Début et évolution<input class="field" style="width:100%" placeholder="Depuis quand ?"></label><label>Symptômes associés<input class="field" style="width:100%" placeholder="Signes rapportés…"></label><label>Antécédents, allergies et traitements<textarea class="field" style="width:100%"></textarea></label><label>Constantes<input class="field" style="width:100%" placeholder="À compléter si mesurées par une personne habilitée"></label><button class="primary" onclick="alert('Trame pédagogique remplie localement. Aucun diagnostic n’est produit.')">Terminer la trame</button></div><p class="note">Toute évaluation clinique doit être supervisée par un professionnel qualifié.</p>`;
+ else if(p==="school")html=`<p>Ton espace d'apprentissage : cours, révisions et exercices.</p><div class="row"><span class="tag">Cours</span><span class="tag">Quiz</span><span class="tag">Révisions</span><span class="tag">Sciences infirmières</span></div><textarea class="field" style="width:100%;min-height:120px" placeholder="Indique la matière ou la notion à étudier…"></textarea><p class="note">Le tuteur intelligent sera activé après connexion du backend.</p>`;
+ else if(p==="research")html=`<p>Prépare une recherche à partir d'une question précise.</p><input class="field" id="researchQuery" style="width:100%" placeholder="Sujet ou question de recherche"><button class="primary" style="margin-top:10px" onclick="alert('La recherche web et les citations seront activées après connexion du service de recherche.')">Préparer la recherche</button><p class="note">La recherche web en direct n'est pas encore connectée.</p>`;
+ else if(p==="translator")html=`<div class="row"><select class="field" id="langFrom"><option>Français</option><option>Lingala</option><option>Swahili</option><option>Tshiluba</option><option>English</option></select><span>⇄</span><select class="field" id="langTo"><option>Lingala</option><option>Français</option><option>Swahili</option><option>Tshiluba</option><option>English</option></select></div><textarea class="field" style="width:100%;min-height:110px;margin-top:12px" placeholder="Texte à traduire…"></textarea><p class="note">Le moteur de traduction doit encore être connecté.</p>`;
+ else if(p==="music")html=`<p>Prépare tes projets musicaux et tes paroles.</p><input class="field" id="songTitle" style="width:100%" placeholder="Titre de la chanson"><textarea class="field" style="width:100%;min-height:130px;margin-top:10px" placeholder="Écris tes paroles ou décris ton idée musicale…"></textarea><p class="note">La génération et le traitement audio nécessitent un service externe compatible.</p>`;
+ else if(p==="studio")html=`<h3>GENIUS STUDIO</h3><p>Atelier destiné à préparer l'enregistrement, les pistes, le mixage et les projets audio.</p><div class="row"><span class="pill">Enregistrement</span><span class="pill">Pistes audio</span><span class="pill">Mixage</span><span class="pill">Export</span></div><p class="note">Le studio audio réel nécessite un moteur audio et des permissions microphone qui ne sont pas encore intégrés.</p>`;
+ else if(p==="cyber")html=`<p>Centre de sensibilisation et de défense numérique.</p><div class="row"><span class="tag">Sécurité des comptes</span><span class="tag">Phishing</span><span class="tag">Protection mobile</span><span class="tag">Bonnes pratiques</span></div><p class="note">Fonctions limitées à la protection, à l'analyse défensive et à l'éducation.</p>`;
+ else if(p==="voice")html=`<p>Teste la synthèse vocale de ton navigateur.</p><textarea class="field" id="voiceText" style="width:100%;min-height:100px">Bonjour ! Je suis GENIUS AI. Bienvenue dans ton espace intelligent.</textarea><div class="row" style="margin-top:12px"><select class="field" id="voiceLang"><option value="fr-FR">Français</option><option value="en-US">English</option><option value="sw-KE">Swahili</option></select><button class="primary" onclick="speak()">▶ Écouter</button><button class="secondary" onclick="speechSynthesis.cancel()">Arrêter</button></div><p class="note">La disponibilité dépend du téléphone et du navigateur.</p>`;
+ else if(p==="micro")html=`<h3>Dictée vocale</h3><p>Utilise la reconnaissance vocale du navigateur si ton appareil la prend en charge.</p><textarea class="field" id="dictation" style="width:100%;min-height:120px" placeholder="Le texte dicté apparaîtra ici…"></textarea><div class="row"><button class="primary" onclick="startDictation()">🎙 Commencer la dictée</button><button class="secondary" onclick="stopDictation()">Arrêter</button></div><p id="microStatus" class="note">La reconnaissance vocale dépend du navigateur et peut nécessiter une connexion.</p>`;
+ else if(p==="avatar")html=`<div style="text-align:center;padding:20px"><div style="font-size:100px;filter:drop-shadow(0 0 20px #31d9ff)">🤖</div><h3>GENIUS AVATAR 3D</h3><p class="muted">Espace réservé à un avatar personnalisable, animé et synchronisé avec la voix de GENIUS.</p><span class="tag">Interface préparatoire</span><span class="tag">Moteur 3D à intégrer</span></div>`;
+ else if(p==="document")html=`<p>Ajoute des documents à cette session locale.</p><input class="field" type="file" id="docInput" multiple accept=".txt,.md,.pdf,.doc,.docx,.png,.jpg,.jpeg"><div id="docList" class="list" style="margin-top:14px"></div><p class="note">Cette version affiche les fichiers sélectionnés. L'analyse réelle des PDF, Word et images nécessite un backend.</p>`;
+ else if(p==="entertainment")html=`<h3>Films, séries et musique</h3><p class="muted">Recherche un titre et prépare ta découverte. Le catalogue en ligne sera ajouté après connexion à des API autorisées.</p><div class="row"><select class="field" id="mediaType"><option>Tout</option><option>Film</option><option>Série</option><option>Musique</option></select><input class="field" id="mediaSearch" style="flex:1;min-width:180px" placeholder="Ex. : Avengers, série, artiste…"><button class="primary" onclick="searchMedia()">Rechercher</button></div><div id="mediaResults" style="margin-top:14px"><div class="result"><b>Catalogue en attente de connexion</b><span class="muted">Les résultats réels et les liens de visionnage légal apparaîtront ici après activation du service catalogue.</span></div></div><p class="note">GENIUS ne contournera pas les protections ni les droits d'auteur. Les liens et téléchargements dépendront des options proposées légalement par les ayants droit ou plateformes.</p>`;
+ else if(p==="download")html=`<h3>Gestionnaire de téléchargements</h3><p class="muted">Tu peux ajouter ici des fichiers que tu possèdes ou que tu es autorisé à télécharger.</p><input class="field" type="file" id="downloadInput" multiple><div class="row" style="margin-top:10px"><span class="tag">Fichiers locaux</span><span class="tag">Contenus autorisés</span><span class="tag">Hors connexion</span></div><div id="downloadList" class="list" style="margin-top:14px"></div><p class="note">Cette interface ne télécharge pas des films ou chansons depuis des plateformes tierces. Les intégrations futures utiliseront uniquement des sources autorisées et leurs fonctions officielles de téléchargement.</p>`;
+ else if(p==="advanced")html=`
+ <p class="muted">Centre des capacités avancées. Les outils locaux fonctionnent dans cette démonstration ; les fonctions d'IA distante nécessitent encore un backend sécurisé.</p>
+ <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr))">
+  <div class="card"><span class="symbol">🧭</span><h3>GENIUS AGENT</h3><p>Planifier une tâche en étapes avec validation humaine.</p><button class="secondary" onclick="agentPlan()">Créer un plan</button></div>
+  <div class="card"><span class="symbol">🤝</span><h3>GENIUS MULTI-AGENT</h3><p>Organiser des rôles spécialisés autour d'un objectif.</p><button class="secondary" onclick="multiPlan()">Voir les rôles</button></div>
+  <div class="card"><span class="symbol">🧠</span><h3>GENIUS REASONING</h3><p>Structurer un problème et vérifier les hypothèses.</p><button class="secondary" onclick="reasonPlan()">Ouvrir l'analyse</button></div>
+  <div class="card"><span class="symbol">👁️</span><h3>GENIUS VISION</h3><p>Préparer une image pour une future analyse IA.</p><input class="field" type="file" accept="image/*" onchange="previewMedia(this,'visionPreview')"><div id="visionPreview"></div></div>
+  <div class="card"><span class="symbol">🎞️</span><h3>GENIUS VIDEO</h3><p>Sélectionner une vidéo locale pour un futur traitement.</p><input class="field" type="file" accept="video/*" onchange="previewMedia(this,'videoPreview')"><div id="videoPreview"></div></div>
+  <div class="card"><span class="symbol">💻</span><h3>GENIUS CODING</h3><p>Rédiger et exporter du code localement.</p><textarea id="codePad" class="field" style="width:100%;min-height:70px" placeholder="Écris ton code ici…"></textarea><button class="secondary" onclick="downloadText('genius-code.txt',$('codePad').value)">Exporter le code</button></div>
+  <div class="card"><span class="symbol">🔬</span><h3>GENIUS SCIENCE</h3><p>Organiser une question et une hypothèse scientifique.</p><textarea id="sciencePad" class="field" style="width:100%;min-height:70px" placeholder="Question scientifique / hypothèse…"></textarea><button class="secondary" onclick="downloadText('genius-notes-science.txt',$('sciencePad').value)">Exporter les notes</button></div>
+  <div class="card"><span class="symbol">🎯</span><h3>GENIUS PERSONALIZATION</h3><p>Enregistrer une préférence sur cet appareil.</p><input id="prefInput" class="field" style="width:100%" placeholder="Ex. : réponses simples en français"><button class="secondary" onclick="savePreference()">Enregistrer</button><small id="prefStatus" class="note"></small></div>
+  <div class="card"><span class="symbol">🌱</span><h3>GENIUS LEARNING</h3><p>Conserver les améliorations souhaitées pour le projet.</p><input id="learnInput" class="field" style="width:100%" placeholder="Ce que GENIUS devrait mieux faire…"><button class="secondary" onclick="saveLearning()">Ajouter</button></div>
+  <div class="card"><span class="symbol">⚙️</span><h3>GENIUS AUTOMATION</h3><p>Préparer un scénario d'automatisation.</p><input id="autoInput" class="field" style="width:100%" placeholder="Ex. : préparer un résumé chaque lundi"><button class="secondary" onclick="saveAutomation()">Enregistrer</button></div>
+  <div class="card"><span class="symbol">🛡️</span><h3>GENIUS SECURITY</h3><p>Contrôle de sécurité de base du projet.</p><button class="secondary" onclick="securityCheck()">Lancer le contrôle</button></div>
+  <div class="card"><span class="symbol">🌍</span><h3>GENIUS MULTILINGUAL</h3><p>Choisir une langue préférée.</p><select id="uiLang" class="field"><option>Français</option><option>English</option><option>Lingala</option><option>Kiswahili</option><option>Tshiluba</option></select><button class="secondary" onclick="localStorage.setItem('genius_ui_lang',$('uiLang').value);alert('Préférence enregistrée localement.')">Enregistrer</button></div>
+  <div class="card"><span class="symbol">🧪</span><h3>GENIUS RELIABILITY</h3><p>Vérifier les réponses avant de les utiliser.</p><button class="secondary" onclick="reliabilityCheck()">Ouvrir la checklist</button></div>
+  <div class="card"><span class="symbol">⏱️</span><h3>GENIUS REAL-TIME</h3><p>Horloge et état local de l'appareil.</p><div id="liveClock" class="pill">Chargement…</div></div>
+  <div class="card"><span class="symbol">🤖</span><h3>GENIUS ROBOTICS</h3><p>Préparer l'intégration future avec des appareils compatibles.</p><span class="tag">Connecteur matériel à développer</span></div>
+ </div>
+
+ <div class="content" style="margin-top:18px">
+  <div class="contenthead"><h2>Architecture étendue — capacités spécialisées</h2><span class="tag">Coordonnées par GENIUS BRAIN</span></div>
+  <p class="muted">Ces capacités sont désormais inscrites dans la plateforme. Leur présence dans cette interface décrit le périmètre prévu : elles devront être développées, connectées à leurs services et testées avant d'être déclarées opérationnelles.</p>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(235px,1fr))">
+   <div class="card"><span class="symbol">🧠</span><h3>1. INTELLIGENCE & RAISONNEMENT</h3><p>GENIUS DEEP REASONING · GENIUS ADAPTIVE THINKING · GENIUS COMPLEX PROBLEM SOLVING · GENIUS SELF-VERIFICATION · GENIUS DECISION ENGINE</p><span class="tag">À développer et tester</span></div>
+   <div class="card"><span class="symbol">🤖</span><h3>2. AGENTS AUTONOMES</h3><p>GENIUS AUTONOMOUS AGENT · GENIUS SUB-AGENTS · GENIUS MULTI-AGENT · GENIUS TASK PLANNER · GENIUS LONG-RUNNING TASKS · GENIUS TOOL ORCHESTRATION</p><span class="tag">Avec validation des actions sensibles</span></div>
+   <div class="card"><span class="symbol">💻</span><h3>3. PROGRAMMATION AVANCÉE</h3><p>GENIUS CODE GENERATION · GENIUS CODE EXECUTION · GENIUS DEBUGGING · GENIUS CODE REVIEW · GENIUS REFACTORING · GENIUS SOFTWARE BUILDER</p><span class="tag">Exécution en environnement isolé</span></div>
+   <div class="card"><span class="symbol">👁️</span><h3>4. VISION & ORDINATEUR</h3><p>GENIUS COMPUTER USE · GENIUS SCREEN UNDERSTANDING · GENIUS IMAGE ANALYSIS · GENIUS DIAGRAM READER · GENIUS VISUAL REASONING</p><span class="tag">Permissions requises</span></div>
+   <div class="card"><span class="symbol">📊</span><h3>5. DOCUMENTS & TRAVAIL PROFESSIONNEL</h3><p>GENIUS PDF INTELLIGENCE · GENIUS DOCUMENT CREATOR · GENIUS SPREADSHEET · GENIUS PRESENTATION · GENIUS DATA ANALYSIS · GENIUS PROFESSIONAL WORKFLOW</p><span class="tag">Connecteurs documentaires à intégrer</span></div>
+   <div class="card"><span class="symbol">🗂️</span><h3>6. MÉMOIRE & CONTINUITÉ</h3><p>GENIUS LONG CONTEXT · GENIUS MEMORY · GENIUS PROJECT CONTINUITY · GENIUS CONTEXT COMPRESSION · GENIUS KNOWLEDGE RETRIEVAL</p><span class="tag">Stockage persistant à connecter</span></div>
+   <div class="card"><span class="symbol">🛡️</span><h3>7. FIABILITÉ & SÉCURITÉ</h3><p>GENIUS AUDIT SYSTEM · GENIUS ERROR RECOVERY · GENIUS SECURITY · GENIUS PERMISSION CONTROL · GENIUS ACTION HISTORY</p><span class="tag">Journal transparent et contrôles d'accès</span></div>
+  </div>
+ </div>
+
+ <div id="advancedOutput" class="result"><b>Laboratoire avancé prêt</b><span class="muted">Choisis une capacité. Les outils d'export et de préférences sont locaux ; les fonctions d'IA distante attendent leurs connexions.</span></div>
+ <p class="note">Les nouvelles capacités listées ci-dessus sont inscrites dans l'architecture mais ne sont pas encore toutes opérationnelles. La vision, la vidéo, le raisonnement avancé, les agents, la robotique et l'apprentissage du modèle nécessitent des services adaptés. Les fichiers sélectionnés restent dans cette session navigateur.</p>`;
+ else if(p==="settings")html=`<h3>Paramètres de GENIUS AI</h3><div class="item"><div><b>État du moteur IA</b><div class="muted">Backend non connecté</div></div><span class="tag">À configurer</span></div><div class="item"><div><b>Stockage</b><div class="muted">Historique local dans ce navigateur</div></div><span class="tag">Actif</span></div><p class="note">Les clés API doivent être placées dans les secrets de l'hébergement et utilisées exclusivement côté serveur. Ne les colle jamais dans ce fichier HTML ni dans une conversation publique.</p>`;
+ body.innerHTML=html;
+ if(p==="docInput"){}
+ if(p==="document")$("docInput").addEventListener("change",e=>showFiles(e.target.files,"docList"));
+ if(p==="download")$("downloadInput").addEventListener("change",e=>showFiles(e.target.files,"downloadList"));
+}
+function showFiles(files,target){$(target).innerHTML=[...files].map(f=>`<div class="item"><span>📄 ${escapeHtml(f.name)}</span><span class="tag">${Math.max(1,Math.round(f.size/1024))} Ko</span></div>`).join("")||"Aucun fichier sélectionné."}
+function searchMedia(){let q=$("mediaSearch").value.trim(),type=$("mediaType").value;if(!q){$("mediaResults").innerHTML='<p class="muted">Entre un titre, un genre ou un artiste.</p>';return}$("mediaResults").innerHTML=`<div class="result"><b>Recherche préparée : ${escapeHtml(q)}</b><span class="muted">Type : ${escapeHtml(type)}. Le catalogue distant n'est pas encore connecté. Aucun faux résultat n'est affiché.</span></div>`}
+async function sendMessage(){
+  const input=$("prompt"),t=input.value.trim(); if(!t)return;
+  const box=$("chatbox"),button=document.querySelector('.composer button');
+  box.innerHTML+=`<div class="msg user">${escapeHtml(t)}</div><div class="msg bot" id="geniusThinking">GENIUS BRAIN analyse la demande…</div>`;
+  input.value=""; input.disabled=true; if(button)button.disabled=true; box.scrollTop=box.scrollHeight;
+  try{
+    const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:t,history:conversations.slice(-12).map(x=>({role:"user",text:x.text}))})});
+    const data=await response.json();
+    const thinking=$("geniusThinking");
+    if(!response.ok)throw new Error(data.error||"Le service IA a répondu avec une erreur.");
+    if(thinking)thinking.textContent=data.reply||"Aucune réponse reçue.";
+    conversations.push({text:t,date:new Date().toISOString(),reply:data.reply||""});save();
+  }catch(err){
+    const thinking=$("geniusThinking");
+    if(thinking)thinking.textContent="Connexion IA indisponible : "+err.message+" Vérifie le serveur et la configuration GEMINI_API_KEY.";
+  }finally{input.disabled=false;if(button)button.disabled=false;input.focus();box.scrollTop=box.scrollHeight;}
+}
+function clearHistory(){if(confirm("Effacer tout l'historique local ?")){conversations=[];save();renderPage("history")}}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function speak(){if(!("speechSynthesis"in window)){alert("Synthèse vocale indisponible.");return}let u=new SpeechSynthesisUtterance($("voiceText").value);u.lang=$("voiceLang").value;speechSynthesis.cancel();speechSynthesis.speak(u)}
+let recognition=null;
+function startDictation(){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){$("microStatus").textContent="La reconnaissance vocale n'est pas prise en charge par ce navigateur.";return}recognition=new SR();recognition.lang="fr-FR";recognition.continuous=true;recognition.interimResults=true;recognition.onresult=e=>{let out="";for(let i=0;i<e.results.length;i++)out+=e.results[i][0].transcript+" ";$("dictation").value=out};recognition.onerror=e=>$("microStatus").textContent="Erreur de reconnaissance : "+e.error;recognition.start();$("microStatus").textContent="Écoute en cours…"}
+function stopDictation(){if(recognition)recognition.stop();$("microStatus").textContent="Dictée arrêtée."}
+
+function advOut(title,body){const el=$("advancedOutput");if(el)el.innerHTML=`<b>${escapeHtml(title)}</b><div class="muted" style="margin-top:6px">${body}</div>`}
+function agentPlan(){advOut("GENIUS AGENT — plan de tâche","1. Comprendre l'objectif.<br>2. Décomposer en étapes.<br>3. Identifier les ressources.<br>4. Demander confirmation avant toute action externe.<br>5. Exécuter puis vérifier le résultat.")}
+function multiPlan(){advOut("GENIUS MULTI-AGENT — équipe proposée","<b>Coordinateur</b> : répartit le travail.<br><b>Chercheur</b> : rassemble les informations.<br><b>Analyste</b> : compare les pistes.<br><b>Vérificateur</b> : contrôle les faits et les sources.<br><b>Rédacteur</b> : prépare le résultat.")}
+function reasonPlan(){advOut("GENIUS REASONING — méthode","Définir le problème → lister les faits → noter les hypothèses → comparer les pistes → vérifier les preuves → signaler les incertitudes.")}
+function previewMedia(input,target){const box=$(target),f=input.files&&input.files[0];if(!box||!f)return;const url=URL.createObjectURL(f);if(f.type.startsWith("image/"))box.innerHTML=`<img alt="Aperçu local" src="${url}" style="max-width:100%;max-height:120px;border-radius:9px;margin-top:8px">`;else box.innerHTML=`<video controls src="${url}" style="width:100%;max-height:130px;margin-top:8px"></video>`}
+function downloadText(name,content){const blob=new Blob([content||""],{type:"text/plain;charset=utf-8"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();URL.revokeObjectURL(a.href)}
+function savePreference(){const v=$("prefInput").value.trim();if(!v)return;localStorage.setItem("genius_preference",v);$("prefStatus").textContent="Préférence enregistrée sur cet appareil."}
+function saveLearning(){const v=$("learnInput").value.trim();if(!v)return;const a=JSON.parse(localStorage.getItem("genius_learning_notes")||"[]");a.push({text:v,date:new Date().toISOString()});localStorage.setItem("genius_learning_notes",JSON.stringify(a));$("learnInput").value="";advOut("GENIUS LEARNING — note ajoutée","Remarque sauvegardée localement pour guider les prochaines améliorations.")}
+function saveAutomation(){const v=$("autoInput").value.trim();if(!v)return;const a=JSON.parse(localStorage.getItem("genius_automation_drafts")||"[]");a.push(v);localStorage.setItem("genius_automation_drafts",JSON.stringify(a));advOut("Scénario préparé",`${escapeHtml(v)}<br>Brouillon local : aucun déclencheur automatique n'est actif.`)}
+function securityCheck(){advOut("Contrôle de sécurité local","✓ Cette page ne demande pas de clé API.<br>✓ Les préférences restent dans le navigateur.<br>⚠️ Avant publication : HTTPS, secrets côté serveur, authentification, sauvegardes et validation des fichiers.")}
+function reliabilityCheck(){advOut("GENIUS RELIABILITY — checklist","□ Vérifier les informations avec une source fiable.<br>□ Comparer les dates et le contexte.<br>□ Distinguer faits, hypothèses et opinions.<br>□ Signaler les incertitudes.<br>□ Faire vérifier les décisions importantes.")}
+function updateGeniusClock(){const el=$("liveClock");if(el)el.textContent=new Date().toLocaleString()}
+setInterval(updateGeniusClock,1000);
+async function checkBackendStatus(){
+  const badge=$("connectionStatus"); if(!badge)return;
+  try{
+    const r=await fetch("/api/health"); const d=await r.json();
+    badge.textContent=d.aiConfigured?"● Gemini connecté":"● Serveur actif • clé Gemini manquante";
+    badge.style.borderColor=d.aiConfigured?"#275b58":"#8a6425";
+    badge.style.background=d.aiConfigured?"#0c282b":"#30230c";
+    badge.style.color=d.aiConfigured?"#83f4d2":"#ffd27a";
+  }catch(e){badge.textContent="● Serveur non connecté";badge.style.borderColor="#8a3434";badge.style.background="#301313";badge.style.color="#ffaaaa";}
+}
+document.addEventListener("keydown",e=>{if(e.key==="Enter"&&e.target&&e.target.id==="prompt"&&!e.shiftKey){e.preventDefault();sendMessage();}});
+checkBackendStatus();
+
+
+</script>
+</body></html>
