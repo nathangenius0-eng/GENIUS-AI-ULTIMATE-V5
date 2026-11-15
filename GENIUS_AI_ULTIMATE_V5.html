@@ -161,7 +161,7 @@ async function sendMessage(){
   box.innerHTML+=`<div class="msg user">${escapeHtml(t)}</div><div class="msg bot" id="geniusThinking">GENIUS BRAIN analyse la demande…</div>`;
   input.value=""; input.disabled=true; if(button)button.disabled=true; box.scrollTop=box.scrollHeight;
   try{
-    const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:t,history:conversations.slice(-12).map(x=>({role:"user",text:x.text}))})});
+    const response=await fetch("https://genius-ai-ultimate-v5-server.onrender.com/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message:t,history:conversations.slice(-12).map(x=>({role:"user",text:x.text}))})});
     const data=await response.json();
     const thinking=$("geniusThinking");
     if(!response.ok)throw new Error(data.error||"Le service IA a répondu avec une erreur.");
@@ -195,7 +195,8 @@ setInterval(updateGeniusClock,1000);
 async function checkBackendStatus(){
   const badge=$("connectionStatus"); if(!badge)return;
   try{
-    const r=await fetch("/api/health"); const d=await r.json();
+    const r=await fetch("https://genius-ai-ultimate-v5-server.onrender.com/api/health")
+/api/health"); const d=await r.json();
     badge.textContent=d.aiConfigured?"● Gemini connecté":"● Serveur actif • clé Gemini manquante";
     badge.style.borderColor=d.aiConfigured?"#275b58":"#8a6425";
     badge.style.background=d.aiConfigured?"#0c282b":"#30230c";
